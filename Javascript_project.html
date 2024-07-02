@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showNum(num){
+            document.getElementById("display").value+=num
+        }
+        function showOp(op){
+            document.getElementById("display").value+=op
+        }
+        function showResult(){
+            x=document.getElementById("display").value
+            y=eval(x)
+            document.getElementById("display").value=y
+        }
+        function showDis(){
+            document.getElementById("display").value=''
+        }
+        function showBack(){
+            Remove=document.getElementById("display")
+            Remove.value=Remove.value.slice(0,-1)
+        }
+
+    </script>
+    <style>
+        body{
+            background-image: url(IMAGES/cccc.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h2{
+            text-align: center;
+            font-size: 40px;
+        }
+        .container{
+            text-align: center;
+        }
+        .calculator{
+            margin: 5px solid black;
+        }
+        .buttons{
+            position: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 5px;
+        }
+        .buttons button{
+            height: 100px;
+            width: 110px;
+            font-size: large;
+            margin-top: 5px;
+            border-radius: 5px;
+            color:dimgrey;
+        }
+        input[type=text]{
+            height: 100px;
+            width: 450px;
+            bottom: 50px;
+            border-radius: 10px;
+            gap: 5px;
+            text-align: right;
+            font-size: xx-large;
+            background-color: rgb(253, 97, 175);
+            color: white;
+        }
+        #operator{
+            background-color: rgb(248, 248, 87);
+        }
+        #Result{
+            background-color: rgb(245, 112, 112);
+        }
+        .buttons button:hover {
+            background-color: lightpink;
+        }
+        .buttons button:active {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Calculator</h2>
+    <div class="container">
+    <div class="calculator">
+        <input type="text" id="display">
+        <div class="buttons">
+            <button onclick="showDis()">AC</button>
+            <button onclick="showBack()">B</button>
+            <button id="operator" onclick="showOp('%')">%</button>
+            <button id="operator"  onclick="showOp('/')">/</button><br>
+            <button onclick="showNum('7')">7</button>
+            <button onclick="showNum('8')">8</button>
+            <button onclick="showNum('9')">9</button>
+            <button id="operator"  onclick="showOp('*')">*</button><br>
+            <button onclick="showNum('4')">4</button>
+            <button onclick="showNum('5')">5</button>
+            <button onclick="showNum('6')">6</button>
+            <button id="operator"  onclick="showOp('-')">-</button><br>
+            <button onclick="showNum('1')">1</button>
+            <button onclick="showNum('2')">2</button>
+            <button onclick="showNum('3')">3</button>
+            <button id="operator"  onclick="showOp('+')">+</button><br>
+            <button onclick="showNum('00')">00</button>
+            <button onclick="showOp('0')">0</button>
+            <button onclick="showOp('.')">.</button>
+            <button id="Result" onclick="showResult()">=</button>
+            
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+</html>
